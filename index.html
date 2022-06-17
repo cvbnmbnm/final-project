@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300" rel="stylesheet">
+
+    <title>Test</title>
+</head>
+
+<body>
+    <div id="app">
+        <custom-form>            
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {                  
+                                 
+                }          
+            },
+            methods: {
+                
+               
+            }
+        })
+
+        app.component('custom-form',{
+            
+            template: `
+            <form @submit="handleSubmit">
+                <h1>{{title}}</h1>
+                <p><input type="email" v-model="email" placeholder="Email" /></p>
+                <p><input type="password" v-model="password" placeholder="Password"/> </p>
+                <p><button>Submit</button></p>
+                
+                </form>` , 
+            data() {
+                return {
+                    
+                    title: 'Login Form',
+                    email:'',
+                    password:''
+                }
+            },
+            methods: {
+                handleSubmit() {
+                    console.log('submitted')
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
